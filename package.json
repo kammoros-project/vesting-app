@@ -1,6 +1,6 @@
 {
   "name": "vesting-app",
-  "homepage": ".",
+  "homepage": "https://kammoros-project.github.io/vesting-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
