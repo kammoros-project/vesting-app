@@ -21,23 +21,19 @@ export function formatPercentage(num: any, den: any): string {
     }).format(percent); 
 }
 
-export function formatCountdown(round: any): string {
-    // if (round === undefined) return ""
-    // const endTime = (round as IRound).endTime.toNumber() * 1000
-    // if (endTime < Date.now()) return "Ended"
-    // const duration = endTime - Date.now()
-    // let options: HumanizerOptions = { round: true }
-    // if (duration < 60*1000) {
-    //     options = { ...options, units: ["s"] }
-    // } else if (duration < 60*60*1000) {
-    //     options = { ...options, units: ["m"] }
-    // } else if (duration < 24*60*60*1000) {
-    //     options = { ...options, units: ["h"] }
-    // } else {
-    //     options = { ...options, units: ["d"] }
-    // }
-    // return humanizeDuration(duration, options)
-    return "tbd"
+export function formatCountdown(until: number): string {
+    const duration = until - Date.now()
+    let options: HumanizerOptions = { round: true }
+    if (duration < 60*1000) {
+        options = { ...options, units: ["s"] }
+    } else if (duration < 60*60*1000) {
+        options = { ...options, units: ["m"] }
+    } else if (duration < 24*60*60*1000) {
+        options = { ...options, units: ["h"] }
+    } else {
+        options = { ...options, units: ["d"] }
+    }
+    return humanizeDuration(duration, options)
 }
 
 export function formatCommify(nb: any, decimals: number = 4): string {
