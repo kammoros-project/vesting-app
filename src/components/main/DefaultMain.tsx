@@ -1,8 +1,6 @@
-import { useAddress, useContract, useContractRead, useContractWrite } from "@thirdweb-dev/react";
+import { useAddress, useContract, useContractWrite } from "@thirdweb-dev/react";
 import { contractAddress } from "../../constants";
 import ERC20Vesting from "../../abi/ERC20Vesting.json"
-import { ethers } from "ethers";
-import { formatCommify } from "../../support/formatters";
 import ClaimDialog from "../dialogs/ClaimDialog";
 import ErrorDialog from "../dialogs/ErrorDialog";
 import LoadingDialog from "../dialogs/LoadingDialog";

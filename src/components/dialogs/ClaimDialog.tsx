@@ -12,7 +12,7 @@ export default function ClaimDialog({ claim }: IClaimDialog) {
 
     const address = useAddress()
     const { contract } = useContract(contractAddress, ERC20Vesting.abi)
-    const { data: unclaimedByAddress, status: statusUnclaimedByAddress } = useContractRead(contract, "unclaimedByAddress", address)
+    const { data: unclaimedByAddress } = useContractRead(contract, "unclaimedByAddress", address)
 
     return (
         <div className="flex flex-col items-center gap-4">
