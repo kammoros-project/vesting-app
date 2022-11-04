@@ -1,6 +1,7 @@
-import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
+import { useAddress } from "@thirdweb-dev/react";
 import Auth from "./components/pages/Auth";
 import Header from "./components/layout/Header";
+import Home from "./components/pages/Home";
 
 export default function App() {
 
@@ -9,7 +10,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-100">
       <Header />
-      { !address && <Auth />}
+      { address ? <Home /> : <Auth />}
     </div>
   )
 }
