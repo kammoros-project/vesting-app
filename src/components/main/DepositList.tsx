@@ -14,7 +14,7 @@ export default function DepositList({ ids }: IDepositList) {
             <div className="bg-white shadow shadow-sm p-8 rounded-2xl">
             <table className="w-full">
                 <thead>
-                    <tr>
+                    <tr className="hidden lg:table-row">
                         <td className={header}>Id</td>
                         <td className={header}>Start Time</td>
                         <td className={header}>Duration</td>
