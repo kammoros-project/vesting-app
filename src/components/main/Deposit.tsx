@@ -11,6 +11,13 @@ interface IDeposit {
 
 const klass = "text-sm font-base text-slate-800 pr-4 py-2 text-right"
 
+function formatEther(value: BigNumber, decimals: number = 0) {
+    let str = ethers.utils.formatEther(value)
+    str = ethers.utils.commify(str)
+    const index = str.indexOf(".") + decimals
+    return str.substring(0, index)
+}
+
 export default function Deposit({ id }: IDeposit) {
 
     const { contract } = useContract(contractAddress, Vault.abi)
@@ -34,10 +41,10 @@ export default function Deposit({ id }: IDeposit) {
                 <td className={klass}>{deposit.id?.toString()}</td>
                 <td className={klass}>{moment(deposit.startTime.toNumber() * 1000).format("DD/MM/YY hh:mm:ss")}</td>
                 <td className={klass}>{moment.duration(deposit.duration.toNumber(), 'seconds').humanize()}</td>
-                <td className={klass}>{ethers.utils.commify(deposit.value)}</td>
-                <td className={klass}>{ethers.utils.commify(vested)}</td>
-                <td className={klass}>{ethers.utils.commify(deposit.released)}</td>
-                <td className={klass}>{ethers.utils.commify(releasable)}</td>
+                <td className={klass}>{formatEther(deposit.value)}</td>
+                <td className={klass}>{formatEther(vested)}</td>
+                <td className={klass}>{formatEther(deposit.released)}</td>
+                <td className={klass}>{formatEther(releasable)}</td>
                 <td className={klass}>
                     <button className="border uppercase text-xs py-1 px-2" onClick={releaseERC20}>
                         <div className="flex justify-between items-center gap-2">

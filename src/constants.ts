@@ -1,3 +1,3 @@
-export const contractAddress = "0x32d6Fe2e35a2ef8b641Ac084b760e28D37a04909"
+export const contractAddress = "0xB4b1C0BD0B328CB36E629a8b286Af836d7c86dF9"
 
 export const stakingUrl = "https://stake.kammorostoken.com"
