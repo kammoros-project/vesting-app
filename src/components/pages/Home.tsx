@@ -1,7 +1,5 @@
 import { useAddress, useContract, useContractRead } from "@thirdweb-dev/react";
 import { contractAddress } from "../../constants";
-import MainWrapper from "../main/MainWrapper";
-import WidgetWrapper from "../widgets/WidgetWrapper";
 import Vault from "../../abi/Vault.json"
 import { DefaultError } from "../layout/DefaultError";
 import LoadingView from "../main/LoadingView";

@@ -29,7 +29,6 @@ export default function Deposit({ id }: IDeposit) {
     const {
         mutate,
         isLoading,
-        error,
     } = useContractWrite(contract, "releaseERC20");
 
     async function releaseERC20() {
