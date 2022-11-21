@@ -2,7 +2,7 @@ import Container from "../layout/Container";
 import WidgetContainer from "./WidgetContainer";
 import { contractAddress } from "../../constants";
 import { useAddress, useContract, useContractRead } from "@thirdweb-dev/react";
-import ERC20Vesting from "../../abi/ERC20Vesting.json"
+import Vault from "../../abi/Vault.json"
 import Loading from "../layout/Loading";
 import { DefaultError } from "../layout/DefaultError";
 import { formatCommify, formatSimplePercent } from "../../support/formatters";
@@ -20,7 +20,7 @@ function SuccessWrapper({ children }: ISuccessWrapper) {
 export default function WidgetWrapper() {
 
     const address = useAddress()
-    const { contract } = useContract(contractAddress, ERC20Vesting.abi)
+    const { contract } = useContract(contractAddress, Vault.abi)
     const { data: allocationByAddress, status: statusAllocationByAddress } = useContractRead(contract, "allocationByAddress", address)
     const { data: releasedByAddress, status: statusReleasedByAddress } = useContractRead(contract, "releasedByAddress", address)
     const { data: claimedByAddress, status: statusClaimedByAddress } = useContractRead(contract, "claimedByAddress", address)

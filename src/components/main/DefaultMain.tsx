@@ -1,6 +1,6 @@
 import { useAddress, useContract, useContractWrite } from "@thirdweb-dev/react";
 import { contractAddress } from "../../constants";
-import ERC20Vesting from "../../abi/ERC20Vesting.json"
+import Vault from "../../abi/Vault.json"
 import ClaimDialog from "../dialogs/ClaimDialog";
 import ErrorDialog from "../dialogs/ErrorDialog";
 import LoadingDialog from "../dialogs/LoadingDialog";
@@ -9,7 +9,7 @@ import SuccessDialog from "../dialogs/SuccessDialog";
 export default function DefaultMain() {
 
     const address = useAddress()
-    const { contract } = useContract(contractAddress, ERC20Vesting.abi)
+    const { contract } = useContract(contractAddress, Vault.abi)
     const { mutateAsync, status, error } = useContractWrite(contract, "claim")
 
     async function claim() {

@@ -1,7 +1,7 @@
 import { useAddress, useContract, useContractRead } from "@thirdweb-dev/react"
 import { contractAddress } from "../../constants"
 import { formatCommify } from "../../support/formatters"
-import ERC20Vesting from "../../abi/ERC20Vesting.json"
+import Vault from "../../abi/Vault.json"
 import Loading from "../layout/Loading"
 
 interface IClaimDialog {
@@ -11,7 +11,7 @@ interface IClaimDialog {
 export default function ClaimDialog({ claim }: IClaimDialog) {
 
     const address = useAddress()
-    const { contract } = useContract(contractAddress, ERC20Vesting.abi)
+    const { contract } = useContract(contractAddress, Vault.abi)
     const { data: unclaimedByAddress } = useContractRead(contract, "unclaimedByAddress", address)
 
     return (
